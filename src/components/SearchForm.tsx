@@ -12,10 +12,10 @@ const SearchForm = () => {
   const [guests, setGuests] = useState('2');
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+    <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {/* Location */}
-        <div className="space-y-2">
+        <div className="space-y-2 sm:col-span-2 md:col-span-1">
           <Label className="text-sm font-medium text-gray-700">여행지</Label>
           <div className="relative">
             <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -23,7 +23,7 @@ const SearchForm = () => {
               placeholder="어디로 여행가세요?"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="pl-10 h-12 border-gray-300 focus:border-yanolja-primary focus:ring-yanolja-primary"
+              className="pl-10 h-12 border-gray-300 focus:border-yanolja-primary focus:ring-yanolja-primary text-base"
             />
           </div>
         </div>
@@ -37,7 +37,7 @@ const SearchForm = () => {
               type="date"
               value={checkIn}
               onChange={(e) => setCheckIn(e.target.value)}
-              className="pl-10 h-12 border-gray-300 focus:border-yanolja-primary focus:ring-yanolja-primary"
+              className="pl-10 h-12 border-gray-300 focus:border-yanolja-primary focus:ring-yanolja-primary text-base"
             />
           </div>
         </div>
@@ -51,7 +51,7 @@ const SearchForm = () => {
               type="date"
               value={checkOut}
               onChange={(e) => setCheckOut(e.target.value)}
-              className="pl-10 h-12 border-gray-300 focus:border-yanolja-primary focus:ring-yanolja-primary"
+              className="pl-10 h-12 border-gray-300 focus:border-yanolja-primary focus:ring-yanolja-primary text-base"
             />
           </div>
         </div>
@@ -64,7 +64,7 @@ const SearchForm = () => {
             <select
               value={guests}
               onChange={(e) => setGuests(e.target.value)}
-              className="pl-10 h-12 w-full border border-gray-300 rounded-md focus:border-yanolja-primary focus:ring-yanolja-primary appearance-none bg-white"
+              className="pl-10 h-12 w-full border border-gray-300 rounded-md focus:border-yanolja-primary focus:ring-yanolja-primary appearance-none bg-white text-base"
             >
               <option value="1">성인 1명</option>
               <option value="2">성인 2명</option>
@@ -78,7 +78,7 @@ const SearchForm = () => {
       {/* Search Button */}
       <div className="mt-6 flex justify-center">
         <Button 
-          className="bg-yanolja-primary hover:bg-yanolja-dark text-white px-8 py-3 h-12 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+          className="bg-yanolja-primary hover:bg-yanolja-dark text-white px-8 py-3 h-12 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 w-full sm:w-auto min-w-[200px]"
         >
           <Search className="w-5 h-5 mr-2" />
           검색하기
